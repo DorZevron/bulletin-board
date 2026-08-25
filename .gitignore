@@ -1,0 +1,15 @@
+# .NET
+server/**/bin/
+server/**/obj/
+
+# Angular / Node
+client/node_modules/
+client/dist/
+client/.angular/
+
+# Editors / OS
+.vscode/
+.DS_Store
+
+# Logs
+*.log
