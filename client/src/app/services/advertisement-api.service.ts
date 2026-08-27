@@ -21,7 +21,7 @@ export class AdvertisementApiService {
             .set('pageSize', query.pageSize);
 
         if (query.search) params = params.set('search', query.search);
-        if (query.category) params = params.set('category', query.category);
+        if (query.category != null) params = params.set('category', query.category);
         if (query.minPrice != null) params = params.set('minPrice', query.minPrice);
         if (query.maxPrice != null) params = params.set('maxPrice', query.maxPrice);
         if (query.mineOnly != null) params = params.set('mineOnly', query.mineOnly);
