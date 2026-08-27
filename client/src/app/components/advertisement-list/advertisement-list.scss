@@ -65,6 +65,29 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  .card-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #f1f3f5;
+
+    .badge {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 0.4em 0.7em;
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: #6c757d;
+      font-size: 0.8rem;
+    }
+  }
 }
 
 @keyframes fade-in {

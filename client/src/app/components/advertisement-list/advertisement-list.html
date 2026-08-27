@@ -6,8 +6,32 @@
 
     <div class="list-header">
         <h2>מודעות</h2>
-        <span class="total-count">סה"כ {{ totalCount() }} מודעות, {{ totalPages() }} עמודים</span>
+        <div class="d-flex align-items-center gap-3">
+            <span class="total-count">סה"כ {{ totalCount() }} מודעות, {{ totalPages() }} עמודים</span>
+            <button type="button" class="btn btn-primary btn-sm" (click)="openCreateModal()">+ מודעה חדשה</button>
+        </div>
     </div>
+
+    <form [formGroup]="filterForm" class="row g-2 mb-4">
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="חיפוש לפי כותרת..." formControlName="search">
+        </div>
+        <div class="col-md-3">
+            <select class="form-select" formControlName="category">
+                <option [ngValue]="null">כל הקטגוריות</option>
+                @for (cat of categories; track cat) {
+                <option [ngValue]="cat">{{ AdvertisementCategory[cat] }}</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="number" class="form-control" placeholder="מחיר מ-" formControlName="minPrice">
+        </div>
+        <div class="col-md-2">
+            <input type="number" class="form-control" placeholder="מחיר עד" formControlName="maxPrice">
+        </div>
+    </form>
+
 
     @if (loading()) {
     <p>טוען...</p>
@@ -21,12 +45,12 @@
     <div class="row row-cols-1 row-cols-md-3 g-3">
         @for (item of items(); track item.id) {
         <div class="col">
-            <div class="card h-100" [class.is-selected]="selectedItem()?.id === item.id" (click)="selectItem(item)">
+            <div class="card h-100" [class.is-selected]="selectedItem()?.id === item.id">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between text-muted small mb-2">
+                    <div class="card-header-row">
                         <span class="badge text-bg-light">{{ AdvertisementCategory[item.category] }}</span>
                         @if (item.location?.address) {
-                        <span>{{ item.location!.address }}</span>
+                        <span class="location">📍 {{ item.location!.address }}</span>
                         }
                     </div>
                     <h5 class="card-title">{{ item.title }}</h5>
@@ -34,6 +58,23 @@
                     @if (item.price != null) {
                     <p class="fw-bold mb-0">{{ item.price }} ₪</p>
                     }
+                    <div class="mt-2 d-flex justify-content-end gap-2">
+                        @if (item.location) {
+                        <button type="button" class="btn btn-sm btn-outline-primary" (click)="selectItem(item)">
+                            📍 הצג במפה
+                        </button>
+                        }
+                        @if (item.isOwnedByCurrentUser) {
+                        <button type="button" class="btn btn-sm btn-outline-secondary"
+                            (click)="openEditModal(item); $event.stopPropagation()">
+                            ערוך
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-danger"
+                            (click)="deleteItem(item); $event.stopPropagation()">
+                            מחק
+                        </button>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,3 +82,14 @@
     </div>
     }
 </div>
+
+
+
+<!--  Modal -->
+@if (showFormModal) {
+<app-modal [title]="editingItem ? 'עריכת מודעה' : 'מודעה חדשה'" (closed)="closeFormModal()">
+    <app-advertisement-form [editingItem]="editingItem" (submitted)="onFormSubmitted($event)"
+        (cancelled)="closeFormModal()">
+    </app-advertisement-form>
+</app-modal>
+}
