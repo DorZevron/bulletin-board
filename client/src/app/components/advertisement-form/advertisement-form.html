@@ -43,15 +43,15 @@
         <input type="text" class="form-control" formControlName="address">
 
         <button type="button" class="btn btn-sm btn-outline-secondary mt-2" (click)="detectLocation()"
-            [disabled]="locationLoading">
-            @if (locationLoading) { מאתר מיקום... } @else { 📍 השתמש במיקום הנוכחי שלי }
+            [disabled]="locationLoading()">
+            @if (locationLoading()) { מאתר מיקום... } @else { 📍 השתמש במיקום הנוכחי שלי }
         </button>
 
-        @if (locationCoords) {
+        @if (locationCoords()) {
         <div class="form-text text-success mt-1">מיקום זוהה בהצלחה</div>
         }
-        @if (locationError) {
-        <div class="form-text text-danger mt-1">{{ locationError }}</div>
+        @if (locationError()) {
+        <div class="form-text text-danger mt-1">{{ locationError() }}</div>
         }
     </div>
 
