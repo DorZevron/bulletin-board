@@ -1,29 +1,29 @@
 [
   {
     "Id": "11111111-1111-1111-1111-111111111111",
-    "Title": "iPhone 17 for sale",
-    "Description": "Barely used, 256GB, comes with original box and charger.",
-    "Category": 0,
-    "Price": 1800,
+    "Title": "2-Room Apartment for Rent in Tel Aviv",
+    "Description": "Bright and quiet apartment on Rothschild Boulevard, close to shops, cafes and public transport. Available immediately.",
+    "Category": 2,
+    "Price": 5800,
     "Location": {
-      "Address": "Tel Aviv, Israel",
-      "Latitude": 32.0853,
-      "Longitude": 34.7818
+      "Address": "Rothschild Boulevard 12, Tel Aviv-Yafo, Israel",
+      "Latitude": 32.0644,
+      "Longitude": 34.7742
     },
     "CreatedByUserId": "demo-user-1",
-    "CreatedAtUtc": "2026-08-01T10:00:00+00:00",
+    "CreatedAtUtc": "2026-08-25T10:00:00+00:00",
     "UpdatedAtUtc": null
   },
   {
     "Id": "22222222-2222-2222-2222-222222222222",
-    "Title": "Community BBQ this Saturday",
-    "Description": "Join us for a neighborhood BBQ at the park, everyone welcome!",
+    "Title": "ארוחת צהריים קהילתית בשבת",
+    "Description": "מצטרפים אלינו לארוחת צהריים שכונתית בפארק, כולם מוזמנים!",
     "Category": 1,
     "Price": null,
     "Location": {
-      "Address": "HaYarkon Park, Tel Aviv",
-      "Latitude": 32.1024,
-      "Longitude": 34.8116
+      "Address": "רוקח 100, תל אביב-יפו, ישראל",
+      "Latitude": 32.1017,
+      "Longitude": 34.7975
     },
     "CreatedByUserId": "demo-user-2",
     "CreatedAtUtc": "2026-08-10T14:30:00+00:00",
@@ -31,14 +31,14 @@
   },
   {
     "Id": "33333333-3333-3333-3333-333333333333",
-    "Title": "2-room apartment for rent",
-    "Description": "Quiet street, close to shops and public transport, available immediately.",
-    "Category": 2,
-    "Price": 5200,
+    "Title": "אייפון 17 למכירה",
+    "Description": "כמעט לא נעשה בו שימוש, 256GB, מגיע עם קופסה ומטען מקוריים.",
+    "Category": 0,
+    "Price": 1800,
     "Location": {
-      "Address": "Ramat Gan, Israel",
-      "Latitude": 32.0684,
-      "Longitude": 34.8248
+      "Address": "ביאליק 2, רמת גן, ישראל",
+      "Latitude": 32.0808,
+      "Longitude": 34.8137
     },
     "CreatedByUserId": "demo-user-1",
     "CreatedAtUtc": "2026-08-15T09:15:00+00:00",
@@ -46,13 +46,43 @@
   },
   {
     "Id": "44444444-4444-4444-4444-444444444444",
-    "Title": "Carpool to Eilat this weekend",
-    "Description": "Leaving Friday morning, 2 seats available, split gas costs.",
+    "Title": "טרמפ לאילת בסוף השבוע",
+    "Description": "יוצאים ביום שישי בבוקר, 2 מקומות פנויים, מתחלקים בדלק.",
     "Category": 3,
     "Price": 150,
     "Location": null,
     "CreatedByUserId": "demo-user-3",
-    "CreatedAtUtc": "2026-08-22T08:00:00+00:00",
+    "CreatedAtUtc": "2026-08-01T08:00:00+00:00",
+    "UpdatedAtUtc": null
+  },
+  {
+    "Id": "55555555-5555-5555-5555-555555555555",
+    "Title": "אופניים חשמליים למכירה",
+    "Description": "אופניים חשמליים במצב מצוין, סוללה חדשה, כולל מנעול ותאורה.",
+    "Category": 0,
+    "Price": 2400,
+    "Location": {
+      "Address": "דיזנגוף 99, תל אביב-יפו, ישראל",
+      "Latitude": 32.0783,
+      "Longitude": 34.7747
+    },
+    "CreatedByUserId": "demo-user-4",
+    "CreatedAtUtc": "2026-08-18T12:00:00+00:00",
+    "UpdatedAtUtc": null
+  },
+  {
+    "Id": "66666666-6666-6666-6666-666666666666",
+    "Title": "Yoga in the Park - Every Friday Morning",
+    "Description": "Free outdoor yoga session, all levels welcome. Bring your own mat.",
+    "Category": 1,
+    "Price": null,
+    "Location": {
+      "Address": "Sderot Ben Gurion 5, Tel Aviv-Yafo, Israel",
+      "Latitude": 32.0776,
+      "Longitude": 34.7702
+    },
+    "CreatedByUserId": "demo-user-5",
+    "CreatedAtUtc": "2026-08-12T07:00:00+00:00",
     "UpdatedAtUtc": null
   }
 ]
