@@ -84,5 +84,20 @@
     "CreatedByUserId": "demo-user-5",
     "CreatedAtUtc": "2026-08-12T07:00:00+00:00",
     "UpdatedAtUtc": null
+  },
+  {
+    "Id": "4c04bee2-2a37-4abf-b7e8-7d52c37e290a",
+    "Title": "בדיקה",
+    "Description": "טסט עריכה",
+    "Category": 4,
+    "Price": 10,
+    "Location": {
+      "Address": "דיזינגוף 101 תל אביב",
+      "Latitude": 31.54028854290597,
+      "Longitude": 34.58837374183801
+    },
+    "CreatedByUserId": "48eb47e4-bcf4-4371-89cf-9de227414897",
+    "CreatedAtUtc": "2026-08-27T17:33:02.470501+00:00",
+    "UpdatedAtUtc": "2026-08-27T17:33:41.162117+00:00"
   }
 ]
