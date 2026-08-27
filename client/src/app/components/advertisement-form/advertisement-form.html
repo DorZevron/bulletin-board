@@ -1,0 +1,62 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">כותרת</label>
+        <input type="text" class="form-control" formControlName="title"
+            [class.is-invalid]="form.controls.title.invalid && form.controls.title.touched">
+        @if (form.controls.title.invalid && form.controls.title.touched) {
+        <div class="invalid-feedback">
+            @if (form.controls.title.errors?.['required']) { כותרת היא שדה חובה }
+            @if (form.controls.title.errors?.['minlength']) { כותרת חייבת להכיל לפחות 2 תווים }
+            @if (form.controls.title.errors?.['maxlength']) { כותרת יכולה להכיל עד 100 תווים }
+        </div>
+        }
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">תיאור</label>
+        <textarea class="form-control" rows="3" formControlName="description"
+            [class.is-invalid]="form.controls.description.invalid && form.controls.description.touched"></textarea>
+        @if (form.controls.description.invalid && form.controls.description.touched) {
+        <div class="invalid-feedback">
+            @if (form.controls.description.errors?.['required']) { תיאור הוא שדה חובה }
+            @if (form.controls.description.errors?.['maxlength']) { תיאור יכול להכיל עד 500 תווים }
+        </div>
+        }
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">קטגוריה</label>
+        <select class="form-select" formControlName="category">
+            @for (cat of categories; track cat) {
+            <option [ngValue]="cat">{{ AdvertisementCategory[cat] }}</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">מחיר (אופציונלי)</label>
+        <input type="number" class="form-control" formControlName="price">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">כתובת (אופציונלי, לתצוגה בלבד)</label>
+        <input type="text" class="form-control" formControlName="address">
+
+        <button type="button" class="btn btn-sm btn-outline-secondary mt-2" (click)="detectLocation()"
+            [disabled]="locationLoading">
+            @if (locationLoading) { מאתר מיקום... } @else { 📍 השתמש במיקום הנוכחי שלי }
+        </button>
+
+        @if (locationCoords) {
+        <div class="form-text text-success mt-1">מיקום זוהה בהצלחה</div>
+        }
+        @if (locationError) {
+        <div class="form-text text-danger mt-1">{{ locationError }}</div>
+        }
+    </div>
+
+    <div class="d-flex justify-content-end gap-2 mt-4">
+        <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">ביטול</button>
+        <button type="submit" class="btn btn-primary">שמירה</button>
+    </div>
+</form>
