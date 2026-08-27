@@ -1,6 +1,8 @@
 using System.Text.Json;
 using BulletinBoard.Application.Interfaces;
 using BulletinBoard.Domain.Models;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace BulletinBoard.Infrastructure.Repositories;
 
@@ -11,7 +13,8 @@ public class JsonAdvertisementRepository : IAdvertisementRepository
 
     private static readonly JsonSerializerOptions _jsonOptions = new()
     {
-        WriteIndented = true
+        WriteIndented = true,
+        Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)
     };
 
     public JsonAdvertisementRepository(string filePath)
