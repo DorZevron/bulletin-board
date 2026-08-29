@@ -1,6 +1,6 @@
 # Bulletin Board
 
-לוח מודעות  — Angular + .NET, ללא Authentication אמיתי (משתמש דמו לפי GUID ב-`localStorage`).
+לוח מודעות  - Angular + .NET, ללא Authentication אמיתי (משתמש דמו לפי GUID ב-`localStorage`).
 
 ## גרסאות
 
@@ -23,7 +23,7 @@ ng serve
 ```
 רץ על `http://localhost:4200`.
 
-יש להריץ את השרת לפני הלקוח — הלקוח פונה ל-`http://localhost:5273/api` (מוגדר ב-`client/src/environments/environment.ts`).
+יש להריץ את השרת לפני הלקוח - הלקוח פונה ל-`http://localhost:5273/api` (מוגדר ב-`client/src/environments/environment.ts`).
 
 ## פיצ'רים
 
@@ -35,5 +35,5 @@ ng serve
 
 ## מבנה
 
-- `server/` — פתרון .NET (`BulletinBoard.Api` / `Domain` / `Application` / `Infrastructure`), נתונים נשמרים בקובץ JSON (`server/BulletinBoard.Api/Data/advertisements.json`).
-- `client/` — Angular, קומפוננטות תחת `src/app/components/`.
+- `server/` - פתרון .NET (`BulletinBoard.Api` / `Domain` / `Application` / `Infrastructure`), נתונים נשמרים בקובץ JSON (`server/BulletinBoard.Api/Data/advertisements.json`).
+- `client/` - Angular, קומפוננטות תחת `src/app/components/`.
